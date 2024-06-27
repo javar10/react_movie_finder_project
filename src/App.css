@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+
+.movieCard {
+  background-color: #61dafb;
+  font-size: 2rem;
+  padding: 10px;
+  width: 200px;
+}
