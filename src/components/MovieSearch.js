@@ -1,17 +1,11 @@
 import { useState } from "react";
 
-
-
 const MovieSearch = ({setMovieResults}) => {
 
     const [movieTitle, setMovieTitle] = useState("");
 
-
-
     const handleMovieSearch = async (e) => {
-
         e.preventDefault();
-
         const formattedMovieTitle = movieTitle.trim().replace(" ", "+");
     
         // step 1: query movie by name to get movie ID
@@ -26,18 +20,14 @@ const MovieSearch = ({setMovieResults}) => {
         // const res = await fetch(`https://api.themoviedb.org/3/movie/75780?api_key=6cd761657add0190cde357202b274567`);
 
       }
-    
-
 
     return (
 
         <form onSubmit={handleMovieSearch}>
             <input type="text" placeholder="enter movie title" onChange={(e) => setMovieTitle(e.target.value)} />
-            <button type="submit">Search Movie</button>
+            <button className="btn-primary" type="submit">Search Movie</button>
         </form>
     )
-
-
 }
 
 export default MovieSearch;
