@@ -7,7 +7,7 @@ const MovieCard = ({movie}) => {
   // const releaseYear = release_date.slice(0, 4);
 
   return (
-    <div className="movieCard col-sm">
+    <div className="movieCard col-3">
         <img src={`https://image.tmdb.org/t/p/w185${poster_path}`} /> 
         <hr/>
         <div className="movieCardBody">

@@ -37,7 +37,6 @@
   }
 }
 
-
 .movieCard {
   /* background-color: #61dafb; */
   /* font-size: 2rem; */
@@ -46,6 +45,7 @@
   text-align: left;
   line-height: .5rem;
 }
+
 .release-date {
   font-style: italic;
 }
