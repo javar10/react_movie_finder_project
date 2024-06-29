@@ -7,8 +7,8 @@ const MovieCard = ({movie}) => {
   // const releaseYear = release_date.slice(0, 4);
 
   return (
-    <Link to={`/movie/${id}`}>
-      <div className="movieCard col-3">
+    <Link className='col-3' to={`/movie/${id}`}>
+      <div className="movieCard">
           <img src={`https://image.tmdb.org/t/p/w185${poster_path}`} /> 
           <hr/>
           <div className="movieCardBody">
