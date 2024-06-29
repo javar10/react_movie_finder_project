@@ -1,25 +1,20 @@
 import './App.css';
-import { useState } from 'react';
-import MovieSearch from './components/MovieSearch';
-import MovieCard from './components/MovieCard';
+import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
+import Home from './Home';
+import MovieDetailPage from './MovieDetailPage';
 
 
 function App() {
-  const [movieResults, setMovieResults] = useState([]);
 
-  console.log("logging movieResults from App.js", movieResults);
 
   return (
     <div className="App">
-      <MovieSearch setMovieResults={setMovieResults}  />
-      <div className='container'>
-        <div className='row'>
-          {movieResults && movieResults.map((movie) => (
-            <MovieCard movie={movie} />
-          ))}
-        </div>
-      </div>
-
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/movie/:movieId" element={<MovieDetailPage />} />
+          </Routes>
+        </Router>
     </div>
   );
 }
