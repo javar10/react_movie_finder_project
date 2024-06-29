@@ -3,14 +3,14 @@ import { useEffect } from "react";
 
 
 
-const MovieDetailPage = () => {
+const ActorDetailPage = () => {
 
-  const {movieId} = useParams();
+  const {actorId} = useParams();
   const apiKey = process.env.REACT_APP_TMDB_API_KEY;
 
   useEffect(() => {
     const getMovieDetails = async () => {
-        const res = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`)
+        const res = await fetch(`https://api.themoviedb.org/3/person/${actorId}?api_key=${apiKey}`)
         const data = await res.json();
         console.log("loggin data from useEffect:", data)
     }
@@ -18,8 +18,8 @@ const MovieDetailPage = () => {
   }, [])
 
   return (
-    <div>MovieDetailPage, movie id is: {movieId}</div>
+    <div>Actor DetailPage, actor id is: {actorId}</div>
   )
 }
 
-export default MovieDetailPage
+export default ActorDetailPage
