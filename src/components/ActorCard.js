@@ -3,33 +3,23 @@ import { useState } from 'react';
 
 
 const ActorCard = ({actor}) => {
-
   const {name, profile_path, id} = actor;
-  
-
-  const actorId = id;
-  const apiKey = process.env.REACT_APP_TMDB_API_KEY;
   const [lifeSpan, setLifeSpan] = useState("")
 
- // TODO: get and display actor's lifespan 
-  // const getActorDetails = async () => {
-  //   const res = await fetch(`https://api.themoviedb.org/3/person/${actorId}?api_key=${apiKey}`);
-  //   const data = await res.json();
-  //   console.log(data);
+  const getActorDetails = async () => {
+    const actorId = id;
+    const apiKey = process.env.REACT_APP_TMDB_API_KEY;
+    const res = await fetch(`https://api.themoviedb.org/3/person/${actorId}?api_key=${apiKey}`);
+    const data = await res.json();
 
-  //   let birthYear = data.birthday;
-  //   console.log(typeof(birthYear))
-  //   birthYear === null ? birthYear = "" : birthYear = data.birthday.slice(0, 4);
-  //   console.log(birthYear)
-  //   let deathYear = data.deathday;
-  //   console.log(deathYear)
-  //   deathYear === null? deathYear = "" : deathYear = data.deathYear.slice(0, 4);
-  //   setLifeSpan(`${birthYear} - ${deathYear}`);
-
-  // }
+    let birthYear = data.birthday;
+    !birthYear ? birthYear = "" : birthYear = data.birthday.slice(0, 4);
+    let deathYear = data.deathday;
+    !deathYear ? deathYear = "" : deathYear = data.deathday.slice(0, 4);
+    setLifeSpan(`${birthYear} - ${deathYear}`);
+  }
   
-  // getActorDetails();
-  // console.log(lifeSpan);
+  getActorDetails();
 
   return (
     <Link className='col-3' to={`/actor/${id}`}>
@@ -38,7 +28,7 @@ const ActorCard = ({actor}) => {
           <hr/>
           <div className="movieCardBody">
             <h3>{name}</h3>
-            {/* <p className="release-date">{lifeSpan}</p> */}
+            <p className="release-date">{lifeSpan}</p>
           </div>
       </div>
     </Link>

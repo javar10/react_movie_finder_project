@@ -4,16 +4,13 @@ import MovieCard from "./components/MovieCard";
 import ActorSearch from "./components/ActorSearch";
 import ActorCard from "./components/ActorCard";
 
-
-
 const Home = () => {
 
   const [movieResults, setMovieResults] = useState([]);
   const [actorResults, setActorResults] = useState([]);
 
-
   console.log("logging movieResults:", movieResults);
-
+  console.log("logging actorResults:", actorResults);
 
   return (
     <>
