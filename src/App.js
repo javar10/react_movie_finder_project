@@ -3,6 +3,8 @@ import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import Home from './Home';
 import MovieDetailPage from './MovieDetailPage';
 import ActorDetailPage from './components/ActorDetailPage';
+import ActorSearch from './components/ActorSearch';
+import MovieSearchPage from './pages/MovieSearchPage';
 
 
 function App() {
@@ -13,8 +15,10 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/movie/:movieId" element={<MovieDetailPage />} />
-            <Route path="/actor/:actorId" element={<ActorDetailPage />} />
+            <Route path="/search/movie" element={<MovieSearchPage/>} />
+            <Route path="/search/movie/:movieId" element={<MovieDetailPage />} />
+            <Route path="/search/actor" element={<ActorSearch/>} />
+            <Route path="/search/actor/:actorId" element={<ActorDetailPage />} />
           </Routes>
         </Router>
     </div>

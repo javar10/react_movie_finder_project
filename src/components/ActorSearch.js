@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-const ActorSearch = ({setActorResults}) => {
-
+const ActorSearch = ( {setActorResults} ) => {
+    console.log(typeof(setActorResults));
     const [actorName, setActorName] = useState("");
 
     const handleSubmit = async (e) => {
@@ -11,6 +11,9 @@ const ActorSearch = ({setActorResults}) => {
         const res = await fetch(`https://api.themoviedb.org/3/search/person?query=${formattedActorName}&api_key=${apiKey}`);
         const data = await res.json();
         const actors = data.results;
+
+        console.log(actors);
+        console.log(typeof(setActorResults));
         setActorResults(actors);
         console.log(actors);
       }
