@@ -5,18 +5,18 @@ import ActorCard from "../components/ActorCard";
 const ActorSearchPage = () => {
     const [actorResults, setActorResults] = useState([]);
     
-  return (
-    <>       
-        <ActorSearch setActorResults={setActorResults} />
-        <div className='container mt-5'>
-            <div className='row'>
-                {actorResults && actorResults.map((actor) => (
-                    <ActorCard key={actor.id} actor={actor} />
-                ))}
+    return (
+        <>       
+            <ActorSearch setActorResults={setActorResults} />
+            <div className='container mt-5'>
+                <div className='row'>
+                    {actorResults && actorResults.map((actor) => (
+                        <ActorCard key={actor.id} actor={actor} />
+                    ))}
+                </div>
             </div>
-        </div>
-    </>
-  )
+        </>
+    )
 }
 
 export default ActorSearchPage

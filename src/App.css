@@ -47,6 +47,22 @@
   cursor: pointer;
 }
 
+.movieDetailsCard {
+  margin: 2rem;
+  text-align: left;
+  display: grid;
+  place-items: center;
+}
+
+.movieDetailsText {
+  background-color: rgba(0, 0, 0, 0.70);
+  color: white;
+  width: 70%;
+  padding: 1rem;
+  border-radius: 2rem
+  
+}
+
 .release-date {
   font-style: italic;
 }

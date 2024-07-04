@@ -22,7 +22,7 @@ const ActorCard = ({actor}) => {
   getActorDetails();
 
   return (
-    <Link className='col-3' to={`/actor/${id}`}>
+    <Link className='col-3' to={`/search/actor/${id}`}>
       <div className="movieCard">
           <img src={`https://image.tmdb.org/t/p/w185${profile_path}`} /> 
           <hr/>

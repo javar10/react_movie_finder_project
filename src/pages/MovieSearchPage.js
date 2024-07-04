@@ -5,7 +5,6 @@ import MovieCard from "../components/MovieCard";
 const MovieSearchPage = () => {
 
   const [movieResults, setMovieResults] = useState([]);
-
   return (
     <>
         <MovieSearch setMovieResults={setMovieResults}  />
