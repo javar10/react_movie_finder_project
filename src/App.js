@@ -1,7 +1,7 @@
 import './App.css';
 import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import Home from './Home';
-import MovieDetailPage from './MovieDetailPage';
+import MovieDetailPage from './pages/MovieDetailPage';
 import ActorDetailPage from './components/ActorDetailPage';
 import ActorSearchPage from './pages/ActorSearchPage';
 import MovieSearchPage from './pages/MovieSearchPage';

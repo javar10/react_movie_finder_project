@@ -15,8 +15,8 @@ const MovieDetailPage = () => {
     backgroundPosition: 'center',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
-    width: '100%',
-    height: '400px'
+    width: 'full',
+    height: '100vh'
   };
 
   console.log('logging from MovieDetailPage', movieData);
@@ -33,21 +33,22 @@ const MovieDetailPage = () => {
   }, [])
 
   return (
-    <div>
-      {movieData && (      
-        <div style={backgroundStyle} className="movieDetailsCard">         
-          <div className="movieDetailsText">
-            <h2>{movieData.title} <span className="release-date">({movieData.release_date})</span></h2>
-            <h4>{movieData.tagline}</h4>
-            <p>{movieData.overview}</p>
-            <p>Revenue: ${movieData.revenue}</p>
-            <p>Total Runtime: {movieData.runtime} minutes</p>
+      <>
+        {movieData && (      
+          <div style={backgroundStyle} className="movieDetailsCard">         
+            <div className="movieDetailsText">
+              <h2>{movieData.title} <span className="release-date">({movieData.release_date})</span></h2>
+              <hr />
+              <h4>"{movieData.tagline}"</h4>
+              <p>{movieData.overview}</p>
+              <p>Revenue: ${movieData.revenue}</p>
+              <p>Total Runtime: {movieData.runtime} minutes</p>
+            </div>
           </div>
-        </div>
-    )}
-    </div>
+          )
+        }
+    </>
   )
-
 }
 
 export default MovieDetailPage
