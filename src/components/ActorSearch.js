@@ -11,6 +11,8 @@ const ActorSearch = ( {setActorResults} ) => {
         const res = await fetch(`https://api.themoviedb.org/3/search/person?query=${formattedActorName}&api_key=${apiKey}`);
         
         const data = await res.json();
+
+        console.log("logging data from ActorSearch:", data)
         const actors = data.results;
         
         setActorResults(actors);
